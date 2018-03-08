@@ -1,0 +1,8 @@
+<launch>
+<!--  <include file="$(find ps3joy)/launch/ps3.launch" /> -->
+<!--  <node pkg="network_camera" name="camera_teleop" type="camera_teleop.py" output="screen"/> -->
+  <node pkg="network_camera" name="camera_teleop" type="camera_teleop.py"/>
+  <node pkg="network_camera" name="network_streamer" type="network_streamer"/>
+  <node pkg="rviz" name="rviz" type="rviz" args="-d $(find network_camera)/config/network_camera.rviz"/>
+  <node pkg="network_camera" name="key_teleop" type="key_teleop" output="screen"/>
+</launch>
